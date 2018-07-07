@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "209178169320",
+    "firebase_url": "https://kayastaff-33922.firebaseio.com",
+    "project_id": "kayastaff-33922",
+    "storage_bucket": "kayastaff-33922.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:209178169320:android:dd58ab050fbf9bd1",
+        "android_client_info": {
+          "package_name": "com.augmntd.kayastaff"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "209178169320-kom66a0kgl9agljdilsustlbpkrb9t3n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.augmntd.kayastaff",
+            "certificate_hash": "91e9fac8f78a8922145d5a08bfd75b5139c402f9"
+          }
+        },
+        {
+          "client_id": "209178169320-q19cihgteaf917mnr0hfvuo09771sicp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBacZoRlL-v-jyBfWnntGU07d_p5AuOL3s"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "209178169320-q19cihgteaf917mnr0hfvuo09771sicp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

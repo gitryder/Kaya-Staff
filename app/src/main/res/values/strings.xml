@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Kaya Staff</string>
+    <string name="welcome_to_kaya">Welcome to Kaya</string>
+    <string name="register">Create new Account</string>
+    <string name="this_is_the_main_page">This is the Main Page</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="let_s_go">Let\'s Go</string>
+    <string name="log_in">Login</string>
+    <string name="name2">Name</string>
+    <string name="e_mail">E-mail</string>
+    <string name="password2">Password</string>
+    <string name="register_reg">Register</string>
+    <string name="log_out">Log out</string>
+</resources>
