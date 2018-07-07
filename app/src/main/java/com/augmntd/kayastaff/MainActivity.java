@@ -18,7 +18,6 @@ import com.jcminarro.roundkornerlayout.RoundKornerFrameLayout;
 public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
-    private TextView tvDisplayText;
     private android.support.v7.widget.Toolbar mToolbar;
     private FloatingActionButton mFab;
 
@@ -51,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         mAuth = FirebaseAuth.getInstance();
-        tvDisplayText = (TextView) findViewById(R.id.tvDisplayText);
 
         super.onStart();
         // Check if user is signed in.
@@ -60,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
             //Get the Email from the Firebase
             String emailDisplay = currentUser.getEmail();
             //Now display the received email
-            //tvDisplayText.setText(emailDisplay);
         }else {
             sendBack();
         }
