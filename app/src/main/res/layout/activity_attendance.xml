@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.augmntd.kayastaff.AttendanceActivity">
+
+    <include layout="@layout/app_bar" android:id="@+id/main_page_toolbar"/>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/OneTimePassLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:layout_centerHorizontal="true">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/OneTimePass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginEnd="35dp"
+            android:layout_marginStart="35dp"
+            android:ems="10"
+            android:hint="Set a Password"
+            android:inputType="numberPassword" />
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/bLoginButton"
+        android:layout_width="110dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/OneTimePassLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/button_color_accented"
+        android:textColor="#FFFFFF"
+        android:text="Submit"
+        android:textAllCaps="false"/>
+
+
+</RelativeLayout>

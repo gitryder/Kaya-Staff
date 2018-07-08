@@ -1,6 +1,7 @@
 package com.augmntd.kayastaff;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -60,6 +61,9 @@ public class MainActivity extends AppCompatActivity {
                     FirebaseAuth.getInstance().signOut();
                     finish();
                     sendBack();
+                }if(item.getItemId() == R.id.nav_attendance){
+                    Intent mainIntent = new Intent(MainActivity.this, AttendanceActivity.class);
+                    startActivity(mainIntent);
                 }
 
 
@@ -68,7 +72,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         mFab = (FloatingActionButton) findViewById(R.id.mFab);
-
         mFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

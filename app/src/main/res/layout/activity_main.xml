@@ -45,6 +45,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/mDrawerLayout"
+        android:layout_below="@+id/main_page_toolbar"
         >
 
         <android.support.design.widget.NavigationView
@@ -52,10 +53,11 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="start"
-            app:menu="@menu/navigation_menu"
+            app:menu="@menu/navigation_menu">
+
+                <!--
             app:headerLayout="@layout/navigation_header"
-            >
-        <!--
+
             <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="170dp"
@@ -63,7 +65,7 @@
             android:id="@+id/RelNav">
 
             </RelativeLayout>
-        -->
+                -->
 
         </android.support.design.widget.NavigationView>
 
