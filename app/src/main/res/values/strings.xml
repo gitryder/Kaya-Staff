@@ -4,6 +4,8 @@
     <string name="register">Create new Account</string>
     <string name="this_is_the_main_page">This is the Main Page</string>
     <string name="name">Name</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="let_s_go">Let\'s Go</string>

@@ -41,6 +41,31 @@
 
     </com.jcminarro.roundkornerlayout.RoundKornerFrameLayout>
 
+    <android.support.v4.widget.DrawerLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/mDrawerLayout"
+        android:layout_below="@id/main_page_toolbar">
+
+        <android.support.design.widget.NavigationView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:menu="@menu/navigation_menu">
+        <!--
+            <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:background="#ffde03"
+            android:id="@+id/RelNav">
+
+            </RelativeLayout>
+        -->
+
+        </android.support.design.widget.NavigationView>
+
+    </android.support.v4.widget.DrawerLayout>
+
 </RelativeLayout>
 
 
