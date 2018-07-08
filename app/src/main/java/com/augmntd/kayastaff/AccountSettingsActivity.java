@@ -178,7 +178,7 @@ public class AccountSettingsActivity extends AppCompatActivity {
 
     }
 
-    @Override
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
         getMenuInflater().inflate(R.menu.main_menu, menu);
@@ -195,7 +195,7 @@ public class AccountSettingsActivity extends AppCompatActivity {
         }
 
         return true;
-    }
+    }*/
     private void sendBack() {
         Intent startIntent = new Intent(AccountSettingsActivity.this, StartActivity.class);
         startActivity(startIntent);
