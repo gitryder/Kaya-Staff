@@ -78,6 +78,7 @@ public class RegisterActivity extends AppCompatActivity {
         bRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //GET THE TEXT THAT IS IN THE FIELDS
                 String name = etName.getEditText().getText().toString();
                 String email = etEmail.getEditText().getText().toString();
                 String password = etPassword.getEditText().getText().toString();
@@ -101,6 +102,7 @@ public class RegisterActivity extends AppCompatActivity {
                     mRegProgress.setMessage("Please wait while we register you");
                     mRegProgress.setCanceledOnTouchOutside(false);
                     mRegProgress.show();
+                    //PASS ALL THE FIELD VALUES TO OUR DATABASE FUNCTION
                     registerUser(name, email, password);
                 }
 

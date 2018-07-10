@@ -6,13 +6,13 @@
     android:layout_height="match_parent"
     tools:context="com.augmntd.kayastaff.StudentsActivity">
 
-    <include layout="@layout/app_bar" android:id="@+id/users_toolbar"/>
+    <include layout="@layout/app_bar" android:id="@+id/students_toolbar"/>
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/userList"
+        android:id="@+id/studentList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/users_toolbar">
+        android:layout_below="@id/students_toolbar">
 
 
 

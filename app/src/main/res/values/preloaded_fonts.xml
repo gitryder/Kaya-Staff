@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="preloaded_fonts" translatable="false">
+        <item>@font/amiko_semibold</item>
         <item>@font/averia_libre</item>
         <item>@font/capriola</item>
         <item>@font/pacifico</item>
+        <item>@font/rubik_medium</item>
+        <item>@font/work_sans_medium</item>
     </array>
 </resources>
