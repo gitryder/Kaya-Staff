@@ -57,7 +57,7 @@ public class AccountSettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account_settings);
 
-        mToolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.main_page_toolbar);
+        mToolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.account_toolbar);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle("Profile");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

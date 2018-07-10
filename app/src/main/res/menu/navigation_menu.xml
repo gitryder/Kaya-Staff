@@ -2,6 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/nav_students"
+        android:icon="@drawable/ic_group_black_24dp"
+        android:title="Students" />
+
+    <item
         android:id="@+id/nav_attendance"
         android:icon="@drawable/baseline_domain_black_24"
         android:title="Attendance" />
@@ -11,5 +16,7 @@
         android:id="@+id/nav_logout"
         android:icon="@drawable/baseline_exit_to_app_black_24"
         android:title="Logout" />
+
+
 
 </menu>

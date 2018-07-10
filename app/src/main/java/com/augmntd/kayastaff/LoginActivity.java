@@ -31,6 +31,8 @@ public class LoginActivity extends AppCompatActivity {
     private TextInputEditText etLoginEmail, etLoginPassword;
     private Button bLoginButton;
     private TextView tvForgotPass;
+    //USER_LIST_LAYOUT_TEST_RUN
+    private TextView tvUserListName;
 
     //Progress Dialog
     private ProgressDialog mLoginProgress;
@@ -40,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        mToolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.main_page_toolbar);
+        mToolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.login_toolbar);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle("Login");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -57,6 +59,9 @@ public class LoginActivity extends AppCompatActivity {
         bLoginButton = (Button) findViewById(R.id.bLoginButton);
         tvForgotPass = (TextView) findViewById(R.id.tvForgotPass);
 
+        //USER_LIST_LAYOUT_TEST_RUN
+        tvUserListName = findViewById(R.id.user_list_name);
+
         tvForgotPass.setPaintFlags(tvForgotPass.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 
         //Define the Typeface
@@ -68,6 +73,7 @@ public class LoginActivity extends AppCompatActivity {
         etLoginPassword.setTypeface(Helvetica);
         */
         bLoginButton.setTypeface(Helvetica);
+        tvUserListName.setTypeface(Helvetica);
 
 
         //Login Button Functionality

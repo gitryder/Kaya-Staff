@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.augmntd.kayastaff.AttendanceActivity">
 
-    <include layout="@layout/app_bar" android:id="@+id/main_page_toolbar"/>
+    <include layout="@layout/app_bar" android:id="@+id/attendance_toolbar"/>
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/OneTimePassLayout"

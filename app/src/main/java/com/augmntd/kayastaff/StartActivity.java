@@ -28,7 +28,7 @@ public class StartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
 
-        mToolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.main_page_toolbar);
+        mToolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.start_toolbar);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle("");
 

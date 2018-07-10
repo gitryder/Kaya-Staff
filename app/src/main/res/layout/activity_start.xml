@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context="com.augmntd.kayastaff.StartActivity">
 
-    <include layout="@layout/app_bar" android:id="@+id/main_page_toolbar"/>
+    <include layout="@layout/app_bar" android:id="@+id/start_toolbar"/>
 
     <TextView
         android:id="@+id/tvWelcome"

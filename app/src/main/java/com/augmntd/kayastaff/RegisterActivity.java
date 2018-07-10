@@ -49,7 +49,7 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        mToolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.main_page_toolbar);
+        mToolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.register_toolbar);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle("Create Account");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

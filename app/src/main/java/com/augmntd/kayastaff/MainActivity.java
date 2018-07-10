@@ -64,6 +64,9 @@ public class MainActivity extends AppCompatActivity {
                 }if(item.getItemId() == R.id.nav_attendance){
                     Intent mainIntent = new Intent(MainActivity.this, AttendanceActivity.class);
                     startActivity(mainIntent);
+                }if(item.getItemId() == R.id.nav_students) {
+                    Intent otherIntent = new Intent(MainActivity.this, StudentsActivity.class);
+                    startActivity(otherIntent);
                 }
 
 

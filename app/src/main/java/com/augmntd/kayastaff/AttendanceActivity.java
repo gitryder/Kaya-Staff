@@ -13,7 +13,7 @@ public class AttendanceActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_attendance);
 
-        mToolbar = findViewById(R.id.main_page_toolbar);
+        mToolbar = findViewById(R.id.attendance_toolbar);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle("Attendance");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

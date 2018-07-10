@@ -29,7 +29,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reset_password);
 
-        mToolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.main_page_toolbar);
+        mToolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.resetpass_toolbar);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle("Reset Password");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

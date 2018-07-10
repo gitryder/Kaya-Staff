@@ -7,7 +7,7 @@
     tools:context="com.augmntd.kayastaff.AccountSettingsActivity">
 
     <include
-        android:id="@+id/main_page_toolbar"
+        android:id="@+id/account_toolbar"
         layout="@layout/app_bar" />
 
     <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
