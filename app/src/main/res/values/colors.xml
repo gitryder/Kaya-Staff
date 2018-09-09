@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#ffde03</color>
-    <color name="colorPrimaryDark">#ffde03</color>
-    <color name="colorAccent">#8f8f8f</color>
-    <color name="colorYellow">#b2ff59</color>
-    <color name="colorYellowAccent">#0336ff</color>
-
+    <color name="colorPrimary">#f44336</color>
+    <color name="colorPrimaryDark">#ba000d</color>
+    <color name="colorAccent">#7c7a7a</color>
+    <color name="colorYellow">#03dac5</color>
+    <color name="colorYellowAccent">#383434</color>
+    <color name="test">#7c7a7a</color>
 </resources>
 
 <!--
 colorPrimaryDark = #e33643;
+yellowAccent = #0336ff;
+yellow = #ffde03
 -->

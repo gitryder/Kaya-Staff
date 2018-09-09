@@ -59,14 +59,14 @@ public class AccountSettingsActivity extends AppCompatActivity {
 
         mToolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.account_toolbar);
         setSupportActionBar(mToolbar);
-        getSupportActionBar().setTitle("Profile");
+        getSupportActionBar().setTitle("Change Photo");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mName = (TextView) findViewById(R.id.mName);
         settingsImage = (CircleImageView) findViewById(R.id.settingsImage);
 
         Typeface Helvetica = Typeface.createFromAsset(getAssets(), "fonts/Autumn.ttf");
-        mName.setTypeface(Helvetica);
+
 
         //Firebase
         mStorage = FirebaseStorage.getInstance().getReference();
@@ -81,7 +81,6 @@ public class AccountSettingsActivity extends AppCompatActivity {
                 String name = dataSnapshot.child("name").getValue().toString();
                 String image = dataSnapshot.child("image").getValue().toString();
 
-                mName.setText(name);
                 if(image.equals("default")){
                     settingsImage.setImageResource(R.drawable.avatar_default_self);
                 }else {
@@ -140,17 +139,17 @@ public class AccountSettingsActivity extends AppCompatActivity {
                 mProgressDialog.setCanceledOnTouchOutside(false);
                 mProgressDialog.show();
 
-                Uri resultUri = result.getUri();
-                String uid = mAuth.getUid();
+                            Uri resultUri = result.getUri();
+                            String uid = mAuth.getUid();
 
-                StorageReference filepath = mStorage.child("profile_images")
-                        .child(uid +".jpg");
+                            StorageReference filepath = mStorage.child("profile_images")
+                                    .child(uid +".jpg");
 
-                filepath.putFile(resultUri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
-                        if(task.isSuccessful()){
-                            String download_url = task.getResult().getDownloadUrl().toString();
+                            filepath.putFile(resultUri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
+                                @Override
+                                public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
+                                    if(task.isSuccessful()){
+                                        String download_url = task.getResult().getDownloadUrl().toString();
 
                             mDatabase.child("image").setValue(download_url).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override

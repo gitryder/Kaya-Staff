@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Kaya Staff</string>
-    <string name="welcome_to_kaya">Welcome to Kaya</string>
+    <string name="welcome_to_kaya">Kaya Staff</string>
     <string name="register">Create new Account</string>
     <string name="this_is_the_main_page">This is the Main Page</string>
     <string name="name">Name</string>

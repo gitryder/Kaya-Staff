@@ -28,6 +28,10 @@ public class StartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
 
+        bRegister = (Button) findViewById(R.id.bRegister);
+        bLogin = (Button) findViewById(R.id.bLogin);
+        tvWelcome = (TextView) findViewById(R.id.tvWelcome);
+
         mToolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.start_toolbar);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle("");
@@ -38,12 +42,9 @@ public class StartActivity extends AppCompatActivity {
             if(wifiInfo != null){
                 String name = ("Connected to Wifi Network:\t" + wifiInfo.getSSID().toString());
                 Toast.makeText(getApplicationContext(), name, Toast.LENGTH_LONG).show();
-                if(name.contains("h4ze")){
-                    Toast.makeText(getApplicationContext(), "We're Cool man",
-                            Toast.LENGTH_LONG).show();
-                }else{
-                    Toast.makeText(getApplicationContext(), "What have you done to h4ze?",
-                            Toast.LENGTH_LONG).show();
+                if(!name.contains("h4ze")){
+                    bLogin.setEnabled(false);
+                    bRegister.setEnabled(false);
                 }
             }
 
@@ -51,9 +52,7 @@ public class StartActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Please enable Wi-fi", Toast.LENGTH_LONG).show();
         }
 
-        bRegister = (Button) findViewById(R.id.bRegister);
-        bLogin = (Button) findViewById(R.id.bLogin);
-        tvWelcome = (TextView) findViewById(R.id.tvWelcome);
+
 
         //Define the Typeface
         Typeface AvenirDemi = Typeface.createFromAsset(getAssets(), "fonts/Avenir_Demi.ttf");

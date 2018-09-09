@@ -26,18 +26,13 @@
         android:id="@+id/mName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/settingsImage"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/textview_back"
-        android:paddingBottom="5dp"
-        android:paddingLeft="50dp"
-        android:paddingRight="50dp"
-        android:paddingTop="5dp"
-        android:text="Display Name"
-        android:textSize="36sp" />
-
-
+        android:layout_below="@id/settingsImage"
+        android:layout_marginTop="8dp"
+        android:textSize="24dp"
+        android:text="Click the photo to change it"
+        android:textColor="@color/test"
+        android:textStyle="bold|italic" />
 
 
     <!--

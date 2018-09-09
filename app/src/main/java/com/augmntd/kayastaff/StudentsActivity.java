@@ -1,5 +1,7 @@
 package com.augmntd.kayastaff;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,6 +13,9 @@ import android.widget.TextView;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.squareup.picasso.Picasso;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class StudentsActivity extends AppCompatActivity {
 
@@ -53,8 +58,19 @@ public class StudentsActivity extends AppCompatActivity {
             protected void populateViewHolder(StudentsViewHolder viewHolder, Students model, int position) {
 
                 StudentsViewHolder.setName(model.getName());
+                StudentsViewHolder.setUserImage(model.getImage(), getApplicationContext());
 
+                final String user_id = getRef(position).getKey();
 
+                StudentsViewHolder.mView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent profile_intent = new Intent(StudentsActivity.this, ProfileActivity.class);
+                        profile_intent.putExtra("user_id", user_id);
+                        startActivity(profile_intent);
+
+                    }
+                });
 
             }
         };
@@ -76,6 +92,11 @@ public class StudentsActivity extends AppCompatActivity {
             TextView studentNameView = mView.findViewById(R.id.user_list_name);
             studentNameView.setText(name);
 
+        }
+
+        public static void setUserImage(String thumb_image, Context ctx){
+            CircleImageView userImageView = mView.findViewById(R.id.user_list_imageview);
+            Picasso.get().load(thumb_image).placeholder(R.drawable.avatar_default).into(userImageView);
         }
 
 

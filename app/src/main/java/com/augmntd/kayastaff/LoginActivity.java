@@ -52,10 +52,10 @@ public class LoginActivity extends AppCompatActivity {
         mLoginProgress = new ProgressDialog(this);
 
         //Initialization
-        etLoginEmail = (TextInputEditText) findViewById(R.id.etPassEmail);
-        etLoginPassword = (TextInputEditText) findViewById(R.id.etLoginPassword);
-        bLoginButton = (Button) findViewById(R.id.bLoginButton);
-        tvForgotPass = (TextView) findViewById(R.id.tvForgotPass);
+        etLoginEmail = findViewById(R.id.etPassEmail);
+        etLoginPassword = findViewById(R.id.etLoginPassword);
+        bLoginButton = findViewById(R.id.bLoginButton);
+        tvForgotPass = findViewById(R.id.tvForgotPass);
 
 
         tvForgotPass.setPaintFlags(tvForgotPass.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
@@ -68,6 +68,7 @@ public class LoginActivity extends AppCompatActivity {
         etLoginEmail.setTypeface(Helvetica);
         etLoginPassword.setTypeface(Helvetica);
         */
+
         bLoginButton.setTypeface(Helvetica);
 
 
@@ -88,8 +89,8 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),
                             "No Man has succeeded without an Email", Toast.LENGTH_SHORT).show();
                 }else {
-                    mLoginProgress.setTitle("Logging In");
-                    mLoginProgress.setMessage("Please wait while we check your credentials");
+                    mLoginProgress.setTitle("Did you know?");
+                    mLoginProgress.setMessage("Attendance systems date back to 1800's");
                     mLoginProgress.setCanceledOnTouchOutside(false);
                     mLoginProgress.show();
                     loginUser(email, password);

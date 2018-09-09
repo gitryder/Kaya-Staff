@@ -17,29 +17,34 @@
         android:text=""
         android:elevation="4dp"
         android:textSize="24sp" /> -->
-
+<!--
     <com.jcminarro.roundkornerlayout.RoundKornerFrameLayout
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="16dp"
         android:layout_marginEnd="16dp"
         android:elevation="4dp"
         android:background="@drawable/button_color_accented"
-        app:corner_radius="360dp">
+        app:corner_radius="360dp"> -->
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/mFab"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="fill"
             android:clickable="true"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"
+            android:elevation="4dp"
+            app:backgroundTint="#ff7961"
             app:fabSize="normal"
-            android:elevation="0dp"
-            app:srcCompat="@drawable/fab_icon" />
-
-    </com.jcminarro.roundkornerlayout.RoundKornerFrameLayout>
+            app:srcCompat="@drawable/ic_add_black_24dp" />
+        <!--
+    </com.jcminarro.roundkornerlayout.RoundKornerFrameLayout> -->
 
     <android.support.v4.widget.DrawerLayout
         android:layout_width="match_parent"

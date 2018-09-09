@@ -5,16 +5,18 @@ public class Students {
     public String name;
     public String rollid;
     public String image;
+    public String thumb_image;
 
     public Students(){
 
     }
 
-    public Students(String name, String rollid, String image) {
+    public Students(String name, String rollid, String image, String thumb_image) {
         this.name = name;
         this.rollid = rollid;
         this.image = image;
-    }
+        this.thumb_image = thumb_image;
+}
 
     public String getName() {
         return name;
@@ -39,4 +41,13 @@ public class Students {
     public void setRollid(String rollid) {
         this.rollid = rollid;
     }
+
+    public String getThumbImage() {
+        return thumb_image;
+    }
+
+    public void setThumbImage(String image) {
+        this.thumb_image = thumb_image;
+    }
+
 }

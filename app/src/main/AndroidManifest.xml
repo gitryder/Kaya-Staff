@@ -46,11 +46,13 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name=".AttendanceActivity"
-            android:parentActivityName=".MainActivity"/>
-
-        <activity android:name=".StudentsActivity"
-            android:parentActivityName=".MainActivity"></activity>
+        <activity
+            android:name=".AttendanceActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".StudentsActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".ProfileActivity"></activity>
     </application>
 
 </manifest>
