@@ -12,6 +12,8 @@ import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -37,7 +39,7 @@ public class RegisterActivity extends AppCompatActivity {
     private android.support.v7.widget.Toolbar mToolbar;
 
     //Layouts Declaration
-    private TextInputLayout etName, etEmail, etPassword;
+    private TextInputLayout etName, etEmail, etPassword, etConfirmPassword;
     private Button bRegister;
 
     //Progress Dialog
@@ -62,6 +64,7 @@ public class RegisterActivity extends AppCompatActivity {
         etName = (TextInputLayout) findViewById(R.id.etNameLayout);
         etEmail = (TextInputLayout) findViewById(R.id.etEmailLayout);
         etPassword = (TextInputLayout) findViewById(R.id.etPasswordLayout);
+        etConfirmPassword = findViewById(R.id.etConfirmPasswordLayout);
         bRegister = (Button) findViewById(R.id.bRegister);
 
         //Define the Typeface
@@ -82,6 +85,8 @@ public class RegisterActivity extends AppCompatActivity {
                 String name = etName.getEditText().getText().toString();
                 String email = etEmail.getEditText().getText().toString();
                 String password = etPassword.getEditText().getText().toString();
+                String confirm_password = etConfirmPassword.getEditText().getText().toString();
+
 
                 //Check if any field is null
                 if (email.matches("") && password.matches("")
@@ -98,12 +103,17 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),
                             "How do you not have a name", Toast.LENGTH_SHORT).show();
                 }else {
-                    mRegProgress.setTitle("Registering User");
-                    mRegProgress.setMessage("Please wait while we register you");
-                    mRegProgress.setCanceledOnTouchOutside(false);
-                    mRegProgress.show();
-                    //PASS ALL THE FIELD VALUES TO OUR DATABASE FUNCTION
-                    registerUser(name, email, password);
+                    if (confirm_password.equals(password)){
+                        mRegProgress.setTitle("Registering User");
+                        mRegProgress.setMessage("Please wait while we register you");
+                        mRegProgress.setCanceledOnTouchOutside(false);
+                        mRegProgress.show();
+                        //PASS ALL THE FIELD VALUES TO OUR DATABASE FUNCTION
+                        registerUser(name, email, password);
+                    } else {
+                        etConfirmPassword.getEditText().setError("Passwords do not match");
+                    }
+
                 }
 
             }

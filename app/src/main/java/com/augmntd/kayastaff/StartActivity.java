@@ -41,10 +41,15 @@ public class StartActivity extends AppCompatActivity {
             WifiInfo wifiInfo = wifiman.getConnectionInfo();
             if(wifiInfo != null){
                 String name = ("Connected to Wifi Network:\t" + wifiInfo.getSSID().toString());
-                Toast.makeText(getApplicationContext(), name, Toast.LENGTH_LONG).show();
-                if(!name.contains("h4ze")){
-                    bLogin.setEnabled(false);
+                Toast.makeText(getApplicationContext(), name, Toast.LENGTH_SHORT).show();
+                if(name.contains("h4ze") || name.contains("Vidyalankar Campus")){
+
+                } else {
+                    String pleaseDude = "Please connect to Vidyalankar Campus";
+                    //bLogin.setEnabled(false);
                     bRegister.setEnabled(false);
+                    Toast.makeText(getApplicationContext(), pleaseDude,
+                            Toast.LENGTH_LONG).show();
                 }
             }
 
