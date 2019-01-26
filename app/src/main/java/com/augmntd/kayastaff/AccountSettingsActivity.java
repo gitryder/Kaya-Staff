@@ -72,8 +72,15 @@ public class AccountSettingsActivity extends AppCompatActivity {
         mStorage = FirebaseStorage.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance().getCurrentUser();
         String uid = mAuth.getUid();
-        mDatabase = FirebaseDatabase.getInstance().getReference().child("Users")
-                .child(uid);
+        String email = mAuth.getEmail();
+
+        if (email.contains("@vp.com")) {
+            mDatabase = FirebaseDatabase.getInstance().getReference().child("Teachers")
+                    .child(uid);
+        } else {
+            mDatabase = FirebaseDatabase.getInstance().getReference().child("Users")
+                    .child(uid);
+        }
 
         mDatabase.addValueEventListener(new ValueEventListener() {
             @Override

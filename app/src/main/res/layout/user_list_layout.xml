@@ -29,7 +29,7 @@
         android:layout_below="@id/user_list_name"
         android:layout_marginTop="0dp"
         android:layout_toRightOf="@id/user_list_imageview"
-        android:text="15202A0000"
+        android:text="roll_no"
         android:textSize="18sp"
         android:textStyle="italic" />
 

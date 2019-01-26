@@ -1,82 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mCoordinatorLayout"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:fitsSystemWindows="true">
+
+<android.support.v4.widget.DrawerLayout
+    android:id="@+id/mDrawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.augmntd.kayastaff.MainActivity">
+    android:fitsSystemWindows="true">
 
-    <include layout="@layout/app_bar" android:id="@+id/main_page_toolbar"/>
-
-    <!--  <TextView
-        android:id="@+id/tvDisplayText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text=""
-        android:elevation="4dp"
-        android:textSize="24sp" /> -->
-<!--
-    <com.jcminarro.roundkornerlayout.RoundKornerFrameLayout
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="16dp"
-        android:elevation="4dp"
-        android:background="@drawable/button_color_accented"
-        app:corner_radius="360dp"> -->
-
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/mFab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="fill"
-            android:clickable="true"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginBottom="16dp"
-            android:layout_marginEnd="16dp"
-            android:elevation="4dp"
-            app:backgroundTint="#ff7961"
-            app:fabSize="normal"
-            app:srcCompat="@drawable/ic_add_black_24dp" />
-        <!--
-    </com.jcminarro.roundkornerlayout.RoundKornerFrameLayout> -->
-
-    <android.support.v4.widget.DrawerLayout
+    <!-- Layout to contain contents of main body of screen (drawer will slide over this) -->
+    <FrameLayout
+        android:id="@+id/content_frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/mDrawerLayout"
         >
-
-        <android.support.design.widget.NavigationView
-            android:id="@+id/mNavView"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="start"
-            app:menu="@menu/navigation_menu"
-            app:headerLayout="@layout/navigation_header"
-            >
-
-                <!--
-
-
-            <RelativeLayout
+        <!-- THE MAIN ACTIVITY RELATIVE LAYOUT -->
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="170dp"
-            android:background="#ffde03"
-            android:id="@+id/RelNav">
+            android:layout_height="match_parent"
+            tools:context="com.augmntd.kayastaff.MainActivity">
 
-            </RelativeLayout>
-                -->
+            <include
+                android:id="@+id/main_page_toolbar"
+                layout="@layout/app_bar" />
 
-        </android.support.design.widget.NavigationView>
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/mFab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="fill"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:clickable="true"
+                android:elevation="4dp"
+                app:backgroundTint="#ff7961"
+                app:fabSize="normal"
+                app:srcCompat="@drawable/ic_add_black_24dp" />
 
-    </android.support.v4.widget.DrawerLayout>
+            <android.support.v7.widget.CardView
+                android:id="@+id/mDateCard"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/main_page_toolbar">
 
-</RelativeLayout>
+                <TextView
+                    android:id="@+id/tvDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryLight"
+                    android:fontFamily="@font/rubik"
+                    android:gravity="center"
+                    android:text="26th Feb, 2019"
+                    android:textColor="@android:color/white"
+                    android:textSize="22dp"
+                    android:textStyle="bold" />
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/mRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/mDateCard"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp" />
+
+        </RelativeLayout>
+
+    </FrameLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/mNavView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/navigation_header"
+        app:menu="@menu/navigation_menu">
+
+    </android.support.design.widget.NavigationView>
+
+</android.support.v4.widget.DrawerLayout>
+
+</android.support.design.widget.CoordinatorLayout>
+
+
 
 

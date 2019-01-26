@@ -39,7 +39,7 @@ public class RegisterActivity extends AppCompatActivity {
     private android.support.v7.widget.Toolbar mToolbar;
 
     //Layouts Declaration
-    private TextInputLayout etName, etEmail, etPassword, etConfirmPassword;
+    private TextInputLayout etName, etEmail, etPassword, etConfirmPassword, etRoll;
     private Button bRegister;
 
     //Progress Dialog
@@ -61,11 +61,12 @@ public class RegisterActivity extends AppCompatActivity {
         //Firebase
         mAuth = FirebaseAuth.getInstance();
         //Layouts Initialization
-        etName = (TextInputLayout) findViewById(R.id.etNameLayout);
-        etEmail = (TextInputLayout) findViewById(R.id.etEmailLayout);
-        etPassword = (TextInputLayout) findViewById(R.id.etPasswordLayout);
+        etName = findViewById(R.id.etNameLayout);
+        etEmail = findViewById(R.id.etEmailLayout);
+        etPassword = findViewById(R.id.etPasswordLayout);
         etConfirmPassword = findViewById(R.id.etConfirmPasswordLayout);
-        bRegister = (Button) findViewById(R.id.bRegister);
+        bRegister = findViewById(R.id.bRegister);
+        etRoll = findViewById(R.id.etRollLayout);
 
         //Define the Typeface
         Typeface Helvetica = Typeface.createFromAsset(getAssets(), "fonts/helvetica.otf");
@@ -82,11 +83,11 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //GET THE TEXT THAT IS IN THE FIELDS
-                String name = etName.getEditText().getText().toString();
-                String email = etEmail.getEditText().getText().toString();
-                String password = etPassword.getEditText().getText().toString();
-                String confirm_password = etConfirmPassword.getEditText().getText().toString();
-
+                String name = etName.getEditText().getText().toString().trim();
+                String email = etEmail.getEditText().getText().toString().trim();
+                String password = etPassword.getEditText().getText().toString().trim();
+                String confirm_password = etConfirmPassword.getEditText().getText().toString().trim();
+                String roll_no = etRoll.getEditText().getText().toString().trim();
 
                 //Check if any field is null
                 if (email.matches("") && password.matches("")
@@ -103,19 +104,22 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),
                             "How do you not have a name", Toast.LENGTH_SHORT).show();
                 }else {
-                    if (confirm_password.equals(password)){
-                        mRegProgress.setTitle("Registering User");
-                        mRegProgress.setMessage("Please wait while we register you");
-                        mRegProgress.setCanceledOnTouchOutside(false);
-                        mRegProgress.show();
-                        //PASS ALL THE FIELD VALUES TO OUR DATABASE FUNCTION
-                        registerUser(name, email, password);
+                    if (!email.contains("@vp.com") && roll_no.isEmpty()){
+                        Toast.makeText(getApplicationContext(), "Roll no needed",
+                                    Toast.LENGTH_SHORT).show();
                     } else {
-                        etConfirmPassword.getEditText().setError("Passwords do not match");
+                        if (confirm_password.equals(password)){
+                            mRegProgress.setTitle("Registering User");
+                            mRegProgress.setMessage("Please wait while we register you");
+                            mRegProgress.setCanceledOnTouchOutside(false);
+                            mRegProgress.show();
+                            //PASS ALL THE FIELD VALUES TO OUR DATABASE FUNCTION
+                            registerUser(name, roll_no, email, password);
+                        } else {
+                            etConfirmPassword.getEditText().setError("Passwords do not match");
+                        }
                     }
-
                 }
-
             }
         });
 
@@ -128,7 +132,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
-    private void registerUser(final String name, String email, String password) {
+    private void registerUser(final String name, final String roll, final String email, String password) {
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -139,13 +143,25 @@ public class RegisterActivity extends AppCompatActivity {
                             FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
                             String uid = currentUser.getUid();
 
-                            mDatabase = FirebaseDatabase.getInstance().getReference()
-                                    .child("Users").child(uid);
-
                             HashMap<String, String> userMap = new HashMap<>();
-                            userMap.put("name", name);
-                            userMap.put("image", "default");
-                            userMap.put("thumbnail", "default");
+
+                            if (email.contains("@vp.com")){
+                                mDatabase = FirebaseDatabase.getInstance().getReference()
+                                        .child("Teachers").child(uid);
+
+                                userMap.put("name", name);
+                                userMap.put("image", "default");
+                            } else {
+                                mDatabase = FirebaseDatabase.getInstance().getReference()
+                                        .child("Users").child(uid);
+
+                                userMap.put("name", name);
+                                userMap.put("image", "default");
+                                userMap.put("roll_no", roll);
+                            }
+
+
+
 
                             mDatabase.setValue(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override

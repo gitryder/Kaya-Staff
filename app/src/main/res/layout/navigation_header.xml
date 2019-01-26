@@ -1,37 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="170dp"
-    android:background="@color/colorPrimary"
-    >
+    android:background="@color/colorPrimary">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/nav_header_photo"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/avatar_circle_blue_512dp"/>
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/avatar_circle_blue_512dp"
+        app:layout_constraintBottom_toTopOf="@+id/nav_header_name"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/nav_header_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="24dp"
+        android:text="Test Superuser"
         android:textColor="#ffffff"
         android:textStyle="bold"
-        android:text="Test Superuser"
-        android:layout_below="@+id/nav_header_photo"/>
+        app:layout_constraintBottom_toTopOf="@+id/nav_header_email"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/nav_header_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="1dp"
-        android:textColor="#ffffff"
+        android:layout_below="@+id/nav_header_name"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="16dp"
         android:text="test@testemail.com"
-        android:layout_below="@+id/nav_header_name"/>
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

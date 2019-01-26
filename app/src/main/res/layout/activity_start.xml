@@ -1,47 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/colorPrimary"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.augmntd.kayastaff.StartActivity">
+    android:background="?attr/colorPrimary"
+    tools:context="com.augmntd.kayastaff.StartActivity"
+    tools:layout_editor_absoluteY="25dp">
 
     <include layout="@layout/app_bar" android:id="@+id/start_toolbar"/>
+
+    <Button
+        android:id="@+id/bRegister"
+        android:layout_width="240dp"
+        android:layout_height="45dp"
+        android:layout_below="@+id/tvWelcome"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="80dp"
+        android:background="@drawable/button_shape"
+        android:text="@string/register"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/bLogin"
+        android:layout_width="120dp"
+        android:layout_height="45dp"
+        android:layout_below="@+id/bRegister"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/button_shape"
+        android:text="@string/log_in"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/bRegister"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/tvWelcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/start_toolbar"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="196dp"
-        android:text="@string/welcome_to_kaya"
-        android:textColor="#FFFFFF"
-        android:textSize="38sp"
-        tools:layout_editor_absoluteX="163dp"
-        tools:layout_editor_absoluteY="205dp" />
+        android:layout_marginStart="16dp"
+        android:paddingRight="20dp"
+        android:text="Kaya"
+        android:textColor="#fff"
+        android:textSize="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvWelcome2"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/bRegister"
+    <TextView
+        android:id="@+id/tvWelcome2"
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_below="@+id/tvWelcome"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="17dp"
-        android:background="@drawable/button_shape"
-        android:textAllCaps="false"
-        android:text="@string/register" />
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="32dp"
+        android:text="Attendance"
+        android:textColor="#fff"
+        android:textSize="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/bLogin"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/bLogin"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:layout_below="@+id/bRegister"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/button_color_accented"
-        android:textColor="#FFFFFF"
-        android:textAllCaps="false"
-        android:text="@string/log_in" />
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

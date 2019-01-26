@@ -7,10 +7,14 @@
         android:title="Students" />
 
     <item
+        android:id="@+id/nav_my_attendance"
+        android:icon="@drawable/ic_attendance"
+        android:title="Attendance" />
+
+    <item
         android:id="@+id/nav_logout"
         android:icon="@drawable/baseline_exit_to_app_black_24"
         android:title="Logout" />
-
 
 
 </menu>

@@ -24,7 +24,7 @@ dependencies {
     implementation 'com.android.support:support-v4:27.1.1'
     implementation 'de.hdodenhof:circleimageview:2.2.0'
     implementation 'com.android.support:appcompat-v7:27.1.1'
-    compile 'com.jcminarro:RoundKornerLayouts:0.3.1'
+    implementation 'com.jcminarro:RoundKornerLayouts:0.3.1'
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.firebaseui:firebase-ui-database:2.0.1'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
@@ -34,7 +34,9 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    compile 'com.theartofdev.edmodo:android-image-cropper:2.7.+'
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.7.+'
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
+    implementation 'com.android.support:cardview-v7:27.1.1'
 }
 
 
@@ -47,4 +49,4 @@ dependencies {
 
 
 
-    apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.gms.google-services'

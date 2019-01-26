@@ -59,6 +59,7 @@ public class StudentsActivity extends AppCompatActivity {
 
                 StudentsViewHolder.setName(model.getName());
                 StudentsViewHolder.setUserImage(model.getImage(), getApplicationContext());
+                StudentsViewHolder.setRollId(model.getRoll_no());
 
                 final String user_id = getRef(position).getKey();
 
@@ -94,10 +95,17 @@ public class StudentsActivity extends AppCompatActivity {
 
         }
 
+        public static void setRollId(String roll_no){
+            TextView user_list_rollid = mView.findViewById(R.id.user_list_rollid);
+            user_list_rollid.setText(roll_no);
+
+        }
+
         public static void setUserImage(String thumb_image, Context ctx){
             CircleImageView userImageView = mView.findViewById(R.id.user_list_imageview);
             Picasso.get().load(thumb_image).placeholder(R.drawable.avatar_default).into(userImageView);
         }
+
 
 
     }
